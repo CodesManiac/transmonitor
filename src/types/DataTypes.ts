@@ -5,4 +5,11 @@ export interface HeaderType {
     target: string;
 
 }
+export interface SidebarType {
+    id: number;
+    title: string;
+    icon: string;
+    route: string;
+
+}
 
