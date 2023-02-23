@@ -17,6 +17,7 @@ import {
 import { getUser } from '../slices/userSlice';
 import StatsCard from '../components/StatsCard';
 import SmallChart from '../assets/images/small-chart.svg';
+import GraphDisplay from '../components/GraphDisplay';
 
 const OverView = () => {
   const dailyTransactionVolume = useSelector(
@@ -94,6 +95,7 @@ const OverView = () => {
           amount={`₦${totalTransactionValue}`}
         />
       </section>
+      <GraphDisplay />
     </section>
   );
 };
