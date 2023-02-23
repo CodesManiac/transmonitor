@@ -35,7 +35,8 @@ const OverView = () => {
   );
 
   const dispatch = useDispatch();
-  const fetchData = () => {
+
+  useEffect(() => {
     fetch(requests.fetchData)
       .then((res) => {
         if (res.ok) {
@@ -60,10 +61,7 @@ const OverView = () => {
       .catch((error) => {
         console.error(error);
       });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className='p-8'>
