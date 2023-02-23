@@ -24,5 +24,6 @@ export interface PaymentsType {
     price: string;
     transaction_number: string;
     time: string;
+    status: string;
 }
 

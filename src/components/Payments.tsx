@@ -12,6 +12,9 @@ const Payments = () => {
   const searchInput = useSelector(
     (state: RootState) => state.overview.searchInput
   );
+  const filterValue = useSelector(
+    (state: RootState) => state.overview.filterValue
+  );
 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -30,8 +33,18 @@ const Payments = () => {
         item.item_type.toLowerCase().includes(query) ||
         item.price.toLowerCase().includes(query) ||
         item.transaction_number.toLowerCase().includes(query) ||
-        item.time.toLowerCase().includes(query)
+        item.time.toLowerCase().includes(query) ||
+        item.status.toLowerCase().includes(query)
       );
+    });
+  }
+  if (filterValue !== '') {
+    currentItems = currentItems.filter((item) => {
+      const value = filterValue.toLowerCase();
+      if (value === 'all') {
+        return item.status.toLowerCase();
+      }
+      return item.status.toLowerCase() === value;
     });
   }
 

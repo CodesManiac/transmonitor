@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search } from '../assets/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { setSearchInput } from '../slices/overViewSlice';
+import { setFilterValue, setSearchInput } from '../slices/overViewSlice';
 
 const TableFilter = () => {
   const statusType = useSelector(
@@ -33,8 +33,10 @@ const TableFilter = () => {
       <div className='flex gap-4 items-center'>
         <p>Show</p>
         <select
-          onChange={(e) => setStatus(e.target.value)}
-          className='w-full outline-none rounded-sm bg-transparent border border-lightGrey  hover:bg-offWhite text-[13px] py-2 px-4'
+          onChange={(e) => {
+            dispatch(setFilterValue(e.target.value));
+          }}
+          className='w-full outline-none rounded-sm bg-transparent  placeholder:text-blue  text-yellow border border-lightGrey  hover:bg-offWhite text-[13px] py-2 px-4'
         >
           {statusType.map((status) => (
             <option
