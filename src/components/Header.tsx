@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 const Header = () => {
   const user = useSelector((state: RootState) => state.user.user);
+  const notifications = useSelector(
+    (state: RootState) => state.user.notifications
+  );
   const [nav, setNav] = useState(false);
   const [searchInput, setSearchInput] = useState('');
 
@@ -60,8 +63,13 @@ const Header = () => {
             {data.title}
           </a>
         ))}
-        <div className='self-center cursor-pointer'>
+        <div className='self-center cursor-pointer relative'>
           <img src={Bell} alt='a notification bell' />
+          {notifications > 0 ? (
+            <span className='notification'>{notifications}</span>
+          ) : (
+            ''
+          )}
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <div>
