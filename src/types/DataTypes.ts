@@ -12,4 +12,11 @@ export interface SidebarType {
     route: string;
 
 }
+export interface StatsCardType {
+    id: number;
+    title: string;
+    image: string;
+    amount: string;
+
+}
 
