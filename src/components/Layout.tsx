@@ -9,11 +9,11 @@ const Layout = () => {
       <Header />
 
       <main className='flex h-screen w-full'>
-        <div className=' hidden md:block w-[260px] h-screen bg-white px-4'>
+        <div className=' hidden md:block w-[260px] h-full bg-white !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-grey'>
           <Sidebar />
         </div>
 
-        <section className='w-full md:w-[100vw-260px] h-full overflow-auto  bg-outletBackground'>
+        <section className='w-full md:w-[100vw-260px] h-full overflow-auto pb-12 bg-outletBackground'>
           {' '}
           <Outlet />
         </section>

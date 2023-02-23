@@ -14,7 +14,9 @@ const TableFilter = () => {
       <div className='flex gap-6 items-center'>
         <p className='text-[13px]'>Showing</p>
         <select className='w-20 outline-none bg-transparent text-blu text-sm p-4'>
+          <option value={10}>10</option>
           <option value={20}>20</option>
+          <option value={50}>50</option>
         </select>
         <p className='text-[13px]'>out of 500 payments</p>
       </div>
@@ -35,13 +37,13 @@ const TableFilter = () => {
           onChange={(e) => {
             dispatch(setFilterValue(e.target.value));
           }}
-          className='w-full outline-none rounded-sm bg-transparent  placeholder:text-blue  text-yellow border border-lightGrey  hover:bg-offWhite text-[13px] py-2 px-4'
+          className='w-full outline-none rounded-sm bg-transparent  placeholder:text-blue  text-deepGrey border border-statusBorder  hover:bg-offWhite text-[13px] py-2 px-4'
         >
           {statusType.map((status) => (
             <option
               key={status}
               value={status}
-              className='text-deepGrey  text-xs'
+              className='text-deepGrey  text-xs hover:text-green'
             >
               {status}
             </option>

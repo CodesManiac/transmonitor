@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       green: '#27AE60',
       navigationGrey: '#647787',
+      navigationBg: '#afcdf3',
       white: '#FFFFFF',
       offWhite: '#F4F4F4',
       outletBackground: '#F7F8FA',
@@ -18,8 +19,8 @@ module.exports = {
       blu: '#1875F0',
       deepGrey: '#414042',
       searchBorder: '#787878',
-      // statusBorder: '#CEDODA',
-      tableHead: '#EAEEFO',
+      statusBorder: '#CED0DA',
+      tableHead: '#EAEEF0',
       statusGrey: '#C4C4C4',
       tableData: '#7F8FA4',
       tableRowBorder: '#CCCFD4',
@@ -35,5 +36,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide'), require('tailwind-scrollbar')],
 };
