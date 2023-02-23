@@ -63,7 +63,7 @@ const Payments = () => {
       </div>
       <section className='flex flex-col md:flex-row gap-8 justify-between items-center py-10 font-semibold'>
         <p className='text-black text-[13px]'>
-          Showing <span>1</span> to <span>10</span> of 500 entries
+          Showing <span>1</span> to <span>10</span> of 10 entries
         </p>
         <div className='flex border border-tableRowBorder rounded-sm '>
           <button
