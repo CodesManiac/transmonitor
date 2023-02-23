@@ -2,7 +2,10 @@ import { CloseSquare, HambergerMenu } from 'iconsax-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { headerData } from './../data/Data';
 import { Bell, Avatar, Search } from '../assets/icons/';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 const Header = () => {
+  const user = useSelector((state: RootState) => state.user.user);
   const [nav, setNav] = useState(false);
   const [searchInput, setSearchInput] = useState('');
 
@@ -62,8 +65,8 @@ const Header = () => {
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <div>
-            <p className='text-[10px] text-right'>Hello</p>
-            <p className='text-sm'>Oluwaleke Ojo</p>
+            <p className='text-[10px] text-right'>{user.greeting}</p>
+            <p className='text-sm'>{user.name}</p>
           </div>
 
           <img src={Avatar} alt='user' className='rounded-[50%]' />
