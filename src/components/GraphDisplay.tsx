@@ -28,7 +28,7 @@ const GraphDisplay = () => {
           </div>
         </div>
         <div className='bg-graph h-64 bg-no-repeat'>
-          <div className='flex justify-between'>
+          <div className='flex justify-between font-semibold'>
             {monthTimeStamp.map((month) => (
               <h2>{month}</h2>
             ))}
@@ -36,25 +36,25 @@ const GraphDisplay = () => {
         </div>
       </div>
       <div className='w-full md:w-1/3'>
-        <div className='bg-white text-dark mb-4  p-4'>
-          <h1 className='text-sm mb-6 font-bold'>Orders</h1>
-          <img src={HorizontalLine} alt='horizontal line' className='mb-6' />
+        <div className='card mb-4'>
+          <h1 className=' mb-4 font-bold'>Orders</h1>
+          <img src={HorizontalLine} alt='horizontal line' className='mb-4' />
           <p>
             Pending Orders:{' '}
             <span className='text-yellow'>{pending_orders}</span>
           </p>
           <p>
             Reconcilled Orders:{' '}
-            <span className='text-greem'>{reconciled_orders}</span>
+            <span className='text-green '>{reconciled_orders}</span>
           </p>
 
           <p>
             Total Orders: <span className='text-blue'>{total_orders}</span>
           </p>
         </div>
-        <div className='bg-white text-dark  p-4'>
-          <h1 className='text-sm mb-6 font-bold'>Payments</h1>
-          <img src={HorizontalLine} alt='horizontal line' className='mb-6' />
+        <div className='card'>
+          <h1 className='mb-4 font-bold'>Payments</h1>
+          <img src={HorizontalLine} alt='horizontal line' className='mb-4' />
           <p>
             Un-reconcilled Payments:{' '}
             <span className='text-yellow'>{unreconciled_payments}</span>

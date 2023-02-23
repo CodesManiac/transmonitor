@@ -3,13 +3,14 @@ import { createSlice } from '@reduxjs/toolkit'
 //interface
 export interface UserState {
     user: any,
-
+    notifications: number
 }
 
 //initialState
 const initialState: UserState = {
 
     user: [],
+    notifications: 3,
 
 }
 
@@ -23,12 +24,15 @@ export const userSlice = createSlice({
 
             state.user = action.payload
         },
+        setNotifications: (state, action) => {
+            state.notifications = action.payload;
+        },
 
 
 
     },
 })
 
-export const { getUser } = userSlice.actions
+export const { getUser, setNotifications } = userSlice.actions
 
 export default userSlice.reducer
