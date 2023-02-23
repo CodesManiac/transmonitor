@@ -5,8 +5,8 @@ import { MerchantProfile } from '../assets/icons';
 const Sidebar = () => {
   const [selectedRoute, setSelectedRoute] = useState('');
   return (
-    <aside className='py-6 text-navigationGrey px-4'>
-      <button className='bg-green rounded-full text-white font-Roboto font-bold tracking-wide py-2 px-4 leading-[14px] text-xs'>
+    <aside className=' py-3 lg:py-6 text-navigationGrey px-4'>
+      <button className='bg-green rounded-full text-white font-Roboto font-bold tracking-wide p-3 md:py-2 md:px-4 leading-[14px] text-xs'>
         GENERATE INVOICE
       </button>
       <div className='mt-6'>
@@ -18,7 +18,7 @@ const Sidebar = () => {
             onClick={() => setSelectedRoute(main.route)}
             className={`flex gap-8 mb-6 cursor-pointer px-2 items-center ${
               main.route === selectedRoute
-                ? 'bg-blu opacity-10 border-l-8 border-l-blu'
+                ? 'bg-blu opacity-10 border-l-2 border-l-blu'
                 : ''
             }`}
           >

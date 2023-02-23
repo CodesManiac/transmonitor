@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Search } from '../assets/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
@@ -9,7 +9,6 @@ const TableFilter = () => {
     (state: RootState) => state.overview.statusType
   );
   const dispatch = useDispatch();
-  const [status, setStatus] = useState('');
   return (
     <div className='flex flex-wrap text-dark w-full justify-between py-2'>
       <div className='flex gap-6 items-center'>

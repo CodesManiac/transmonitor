@@ -4,6 +4,7 @@ import { headerData } from './../data/Data';
 import { Bell, Avatar, Search } from '../assets/icons/';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+import Sidebar from './Sidebar';
 const Header = () => {
   const user = useSelector((state: RootState) => state.user.user);
   const notifications = useSelector(
@@ -87,7 +88,7 @@ const Header = () => {
         ref={hamburgerRef}
         className={
           nav
-            ? 'fixed flex flex-col right-0 top-0 w-3/5 h-full p-8 space-y-5 bg-white rounded-l-2xl ease-in-out duration-500'
+            ? 'fixed flex flex-col right-0 top-0 w-3/5 h-full overflow-auto p-8 space-y-2 bg-white rounded-l-2xl ease-in-out duration-500'
             : 'ease-in-out duration-500 fixed hidden'
         }
       >
@@ -95,6 +96,13 @@ const Header = () => {
           {' '}
           <CloseSquare size='24' color='#1860EC' onClick={handleNavSwitch} />
         </div>
+
+        <img
+          src={Avatar}
+          alt='user'
+          className='rounded-[50%] w-2/4 self-center'
+        />
+
         {headerData.map((data) => (
           <a
             key={data.id}
@@ -108,6 +116,7 @@ const Header = () => {
             {data.title}
           </a>
         ))}
+        <Sidebar />
       </ul>
     </header>
   );
