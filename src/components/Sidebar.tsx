@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { mainData, paymentsData, ordersData } from '../data/Data';
 import { MerchantProfile } from '../assets/icons';
 
 const Sidebar = () => {
+  const [selectedRoute, setSelectedRoute] = useState('');
   return (
     <aside className='py-6 text-navigationGrey px-4'>
       <button className='bg-green rounded-full text-white font-Roboto font-bold tracking-wide py-2 px-4 leading-[14px] text-xs'>
@@ -14,7 +15,12 @@ const Sidebar = () => {
         {mainData.map((main) => (
           <div
             key={main.id}
-            className='flex gap-8 mb-6 cursor-pointer items-center'
+            onClick={() => setSelectedRoute(main.route)}
+            className={`flex gap-8 mb-6 cursor-pointer px-2 items-center ${
+              main.route === selectedRoute
+                ? 'bg-blu opacity-10 border-l-8 border-l-blu'
+                : ''
+            }`}
           >
             <img src={main.icon} alt={main.title} />
             <a href={main.route} className='text-[11px] leading-[14.63px]'>

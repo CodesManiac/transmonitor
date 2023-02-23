@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import requests from '../utils/requests';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
@@ -18,6 +18,7 @@ import { getUser } from '../slices/userSlice';
 import StatsCard from '../components/StatsCard';
 import SmallChart from '../assets/images/small-chart.svg';
 import GraphDisplay from '../components/GraphDisplay';
+import Payments from '../components/Payments';
 
 const OverView = () => {
   const dailyTransactionVolume = useSelector(
@@ -34,9 +35,6 @@ const OverView = () => {
   );
 
   const dispatch = useDispatch();
-
-  const [profile, setProfile] = useState([]);
-
   const fetchData = () => {
     fetch(requests.fetchData)
       .then((res) => {
@@ -96,6 +94,7 @@ const OverView = () => {
         />
       </section>
       <GraphDisplay />
+      <Payments />
     </section>
   );
 };

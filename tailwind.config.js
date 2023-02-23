@@ -20,6 +20,7 @@ module.exports = {
       searchBorder: '#787878',
       // statusBorder: '#CEDODA',
       tableHead: '#EAEEFO',
+      statusGrey: '#C4C4C4',
       tableData: '#7F8FA4',
       tableRowBorder: '#CCCFD4',
       transparent: 'transparent',
