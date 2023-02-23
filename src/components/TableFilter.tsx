@@ -10,22 +10,22 @@ const TableFilter = () => {
   );
   const dispatch = useDispatch();
   return (
-    <div className='flex flex-wrap text-dark w-full justify-between py-2'>
-      <div className='flex gap-6 items-center'>
+    <div className='flex flex-wrap gap-4 text-dark w-full justify-between py-4'>
+      <div className='flex gap-2 items-center'>
         <p className='text-[13px]'>Showing</p>
-        <select className='w-20 outline-none bg-transparent text-blu text-sm p-4'>
+        <select className='w-20 outline-none bg-transparent text-blu text-sm '>
           <option value={10}>10</option>
           <option value={20}>20</option>
           <option value={50}>50</option>
         </select>
-        <p className='text-[13px]'>out of 500 payments</p>
+        <p className='text-[13px]'>out of 10 payments</p>
       </div>
-      <div className='md:flex hidden items-center p-2 border-b-[0.5px] border-b-searchBorder'>
+      <div className='flex items-center p-2 border-b-[0.5px] border-b-searchBorder'>
         <img src={Search} alt='search' />
         <input
           type='text'
           placeholder='Search Payments'
-          className='outline-none bg-transparent text-[11px] leading-[15px] placeholder-searchBorder p-2'
+          className='outline-none bg-transparent text-[11px] leading-[15px] placeholder-search Border p-2'
           onChange={(e) => {
             dispatch(setSearchInput(e.target.value));
           }}
