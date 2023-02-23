@@ -14,12 +14,16 @@
   html{
     @apply font-SegoeUI;
   }
-}
-
-@layer components {
+  th{
+    @apply px-4 py-4;
+  }
   td {
     @apply px-4 pb-2 pt-8;
   }
+}
+
+@layer components {
+  
   .notification{
     @apply absolute -top-1 -right-1 grid place-content-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-blue rounded-full;
   }

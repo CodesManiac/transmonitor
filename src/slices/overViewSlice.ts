@@ -14,6 +14,7 @@ export interface OverviewState {
     monthTimeStamp: [];
     date: string;
     searchInput: string,
+    filterValue: string,
 }
 
 //initialState
@@ -31,6 +32,7 @@ const initialState: OverviewState = {
     monthTimeStamp: [],
     date: '',
     searchInput: '',
+    filterValue: '',
 
 
 
@@ -89,11 +91,14 @@ export const overViewSlice = createSlice({
         setSearchInput: (state, action) => {
             state.searchInput = action.payload
         },
+        setFilterValue: (state, action) => {
+            state.filterValue = action.payload
+        },
 
 
     },
 })
 
-export const { getStats, getAllPayments, getPayments, getDailyTransactionValue, getDailyTransactionVolume, getTotalTransactionValue, getTotalTransactionVolume, getOrders, getStatusType, getMonthTimeStamp, getDate, setSearchInput } = overViewSlice.actions
+export const { getStats, getAllPayments, getPayments, getDailyTransactionValue, getDailyTransactionVolume, getTotalTransactionValue, getTotalTransactionVolume, getOrders, getStatusType, getMonthTimeStamp, getDate, setSearchInput, setFilterValue } = overViewSlice.actions
 
 export default overViewSlice.reducer
