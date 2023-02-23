@@ -14,5 +14,9 @@ import HorizontalLine from './horizontal-line.svg';
 import LeftButton from './left-button.svg';
 import RightButton from './right-button.svg';
 import DownArrow from './down-arrow.svg';
+import ReconcilledIcon from './reconcilled-icon.svg';
+import PendingIcon from './pending-icon.svg';
+import UnreconcilledIcon from './unreconcilled-icon.svg';
 
-export { AllPayments, AllOrders, Avatar, Bell, ManualSettlement, MerchantProfile, Overview, PendingOrders, ReconcilledOrders, ReconcilledPayments, Search, UnreconcilledPayments, HorizontalLine, LeftButton, RightButton, DownArrow }
+
+export { AllPayments, AllOrders, Avatar, Bell, ManualSettlement, MerchantProfile, Overview, PendingOrders, ReconcilledOrders, ReconcilledPayments, Search, UnreconcilledPayments, HorizontalLine, LeftButton, RightButton, DownArrow, PendingIcon, UnreconcilledIcon, ReconcilledIcon }

@@ -15,3 +15,10 @@
     @apply font-SegoeUI;
   }
 }
+
+@layer components {
+  td {
+    @apply px-4 pb-2 pt-8;
+  }
+ 
+}
