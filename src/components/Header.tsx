@@ -11,7 +11,7 @@ const Header = () => {
     (state: RootState) => state.user.notifications
   );
   const [nav, setNav] = useState(false);
-  const [searchInput, setSearchInput] = useState('');
+  const [, setSearchInput] = useState('');
 
   const handleNavSwitch = () => {
     setNav(!nav);

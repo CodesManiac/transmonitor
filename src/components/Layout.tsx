@@ -13,7 +13,7 @@ const Layout = () => {
           <Sidebar />
         </div>
 
-        <section className='w-full md:w-[100vw-260px] h-full overflow-auto pb-12 bg-outletBackground'>
+        <section className='w-full md:w-[100vw-260px] h-full !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-grey pb-12 bg-outletBackground'>
           {' '}
           <Outlet />
         </section>
