@@ -12,6 +12,7 @@ const Layout = () => {
         <div className=' hidden md:block w-[260px] h-screen bg-white px-4'>
           <Sidebar />
         </div>
+
         <section className='w-full md:w-[100vw-260px] h-full overflow-auto  bg-outletBackground'>
           {' '}
           <Outlet />
