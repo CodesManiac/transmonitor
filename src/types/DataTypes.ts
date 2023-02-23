@@ -19,4 +19,10 @@ export interface StatsCardType {
     amount: string;
 
 }
+export interface PaymentsType {
+    item_type: string;
+    price: string;
+    transaction_number: string;
+    time: string;
+}
 

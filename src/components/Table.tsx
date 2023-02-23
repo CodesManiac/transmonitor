@@ -1,14 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
-import { DownArrow } from '../assets/icons';
-const Table = () => {
-  const allPayments = useSelector(
-    (state: RootState) => state.overview.allPayments
-  );
-  console.log('allpayments', allPayments);
+import {
+  DownArrow,
+  ReconcilledIcon,
+  PendingIcon,
+  UnreconcilledIcon,
+} from '../assets/icons';
+
+const Table = ({ allPaymentsData }: any) => {
   return (
-    <table className='table-auto w-max lg:w-full my-4'>
+    <table className='table-auto w-max lg:w-full my-4 bg-white'>
       <thead>
         <tr className='text-tableData bg-offWhite text-left'>
           <th>Item Type</th>
@@ -19,12 +19,12 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {allPayments.map((payment: any) => (
+        {allPaymentsData.map((payment: any) => (
           <tr
             key={payment}
-            className='border-b border-tableRowBorder text-tableData text-sm'
+            className='border-b border-tableRowBorder last:border-b-0 text-tableData text-sm'
           >
-            <td className='px-4 py-2'>
+            <td>
               <div className='flex gap-10 items-center'>
                 <div className='rounded-[50%] bg-tableData p-2'>
                   <p className='text-white'>VW</p>
@@ -32,13 +32,13 @@ const Table = () => {
                 <span className='text-deepGrey'>{payment.item_type}</span>
               </div>
             </td>
-            <td className='px-4 py-2'>{payment.price}</td>
-            <td className='px-4 py-2'>{payment.transaction_number}</td>
-            <td className='px-4 py-2'>{payment.time}</td>
-            <td className='px-4 py-2'>
+            <td>{payment.price}</td>
+            <td>{payment.transaction_number}</td>
+            <td>{payment.time}</td>
+            <td>
               <div className='flex justify-between items-center'>
                 <div
-                  className={`flex gap-4 px-4 py-2 border border-tableRowBorder rounded-full items-center ${
+                  className={`flex gap-4 px-4 py-2 border border-tableRowBorder rounded-full items-center w-40 ${
                     payment.status === 'Reconciled'
                       ? 'text-green'
                       : payment.status === 'Pending'
@@ -46,17 +46,17 @@ const Table = () => {
                       : 'text-statusGrey'
                   }`}
                 >
-                  <p
-                    className={`${
+                  <img
+                    src={
                       payment.status === 'Reconciled'
-                        ? 'bg-green'
+                        ? ReconcilledIcon
                         : payment.status === 'Pending'
-                        ? 'bg-yellow'
-                        : 'bg-statusGrey'
-                    } rounded-[50%] w-3`}
-                  >
-                    0
-                  </p>
+                        ? PendingIcon
+                        : UnreconcilledIcon
+                    }
+                    alt='a round icon'
+                  />
+
                   {payment.status}
                 </div>
                 <img src={DownArrow} alt='arrow pointing down' />
