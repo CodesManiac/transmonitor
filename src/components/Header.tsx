@@ -35,22 +35,24 @@ const Header = () => {
 
   return (
     <header className='px-6 bg-white text-navigationGrey shadow-lg md:px-12 flex justify-between items-center font-SegoeUI py-4 sticky'>
-      <a
-        href='/'
-        className='font-Roboto font-black text-xl  md:text-2xl text-blue'
-      >
-        TransMonitor
-      </a>
-      <div className='md:flex hidden items-center p-2'>
-        <img src={Search} alt='search' />
-        <input
-          type='text'
-          placeholder='Search....'
-          className='outline-none bg-transparent placeholder:font-medium p-2'
-          onChange={(e) => {
-            setSearchInput(e.target.value);
-          }}
-        />
+      <div className='flex gap-4 items-center'>
+        <a
+          href='/'
+          className='font-Roboto font-black text-xl  md:text-2xl text-blue'
+        >
+          TransMonitor
+        </a>
+        <div className='md:flex hidden items-center p-2'>
+          <img src={Search} alt='search' />
+          <input
+            type='text'
+            placeholder='Search....'
+            className='outline-none bg-transparent placeholder:font-medium p-2'
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+            }}
+          />
+        </div>
       </div>
 
       <div className='hidden md:flex md:gap-5'>
@@ -88,7 +90,7 @@ const Header = () => {
         ref={hamburgerRef}
         className={
           nav
-            ? 'fixed flex flex-col right-0 top-0 w-3/5 h-full overflow-auto p-8 space-y-2 bg-white rounded-l-2xl ease-in-out duration-500'
+            ? 'fixed flex flex-col right-0 top-0 w-3/5 h-full overflow-auto p-4 space-y-2 bg-white rounded-l-2xl ease-in-out duration-500'
             : 'ease-in-out duration-500 fixed hidden'
         }
       >
@@ -102,6 +104,17 @@ const Header = () => {
           alt='user'
           className='rounded-[50%] w-2/4 self-center'
         />
+        <div className='flex items-center p-2'>
+          <img src={Search} alt='search' />
+          <input
+            type='text'
+            placeholder='Search....'
+            className='outline-none bg-transparent placeholder:font-medium p-2'
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+            }}
+          />
+        </div>
 
         {headerData.map((data) => (
           <a

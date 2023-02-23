@@ -10,7 +10,7 @@ const Table = ({ allPaymentsData }: any) => {
   return (
     <table className='table-auto w-max lg:w-full my-4 bg-white'>
       <thead>
-        <tr className='text-tableData bg-tableRowBorder text-left'>
+        <tr className='text-tableData bg-tableHead text-left'>
           <th>Item Type</th>
           <th>Price</th>
           <th>Transaction No</th>

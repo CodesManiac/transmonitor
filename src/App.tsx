@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import AllOrders from './pages/allOrders';
+import AllPayments from './pages/allPayments';
 import ErrorPage from './pages/errorPage';
 import OverView from './pages/overview';
 
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: 'overview',
         element: <OverView />,
+      },
+      {
+        path: 'all-payments',
+        element: <AllPayments />,
       },
       {
         path: 'all-orders',
